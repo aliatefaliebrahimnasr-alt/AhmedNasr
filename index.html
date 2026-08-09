@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Nasr | منصة التسويق الرقمي وتوثيق الحسابات</title>
+    <title>Ahmed Nasr | منصة الحلول الرقمية والأرقام المميزة</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,250 +16,405 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        brand: { 500: '#0ea5e9', 600: '#0284c7' },
-                        dark: { bg: '#070a13', card: '#0f172a', border: '#1e293b' }
-                    },
-                    fontFamily: { cairo: ['Cairo', 'sans-serif'] }
+                    fontFamily: { cairo: ['Cairo', 'sans-serif'] },
                 }
             }
         }
     </script>
 
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #070a13; color: #f8fafc; }
-        .glass-header { background: rgba(7, 10, 19, 0.85); backdrop-filter: blur(16px); }
-        .card-glow:hover { transform: translateY(-4px); border-color: rgba(14, 165, 233, 0.4); box-shadow: 0 12px 30px -10px rgba(14, 165, 233, 0.2); }
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background: #090a0f;
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+
+        .glass-header { 
+            background: rgba(10, 10, 12, 0.85); 
+            backdrop-filter: blur(20px); 
+        }
+
+        .gold-card {
+            background: rgba(20, 20, 25, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(250, 204, 21, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .gold-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(250, 204, 21, 0.5);
+            box-shadow: 0 15px 35px -10px rgba(250, 204, 21, 0.2);
+        }
+
+        .gold-btn {
+            background: linear-gradient(135deg, #facc15 0%, #eab308 50%, #ca8a04 100%);
+            color: #000;
+            font-weight: 800;
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            box-shadow: 0 10px 25px -5px rgba(250, 204, 21, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .gold-text-pure {
+            background: linear-gradient(135deg, #fef08a 0%, #facc15 50%, #ca8a04 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         #toast { transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s ease; }
     </style>
 </head>
-<body class="selection:bg-brand-500 selection:text-white relative">
+<body class="selection:bg-yellow-400 selection:text-black relative">
 
     <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 pointer-events-none bg-slate-900 border border-slate-700 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
-        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 pointer-events-none bg-zinc-900 border border-yellow-500/40 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 backdrop-blur-md">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-yellow-400 text-xl"></i>
         <span id="toastMsg" class="text-sm font-bold">تمت العملية بنجاح!</span>
     </div>
 
     <!-- Header -->
-    <header class="fixed top-0 inset-x-0 z-40 glass-header border-b border-slate-800/80">
+    <header class="fixed top-0 inset-x-0 z-40 glass-header border-b border-yellow-500/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
-            <a href="#" class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-600 flex items-center gap-2">
-                <span class="p-2 rounded-xl bg-brand-500/10 border border-brand-500/20 text-brand-500">
-                    <i class="fa-solid fa-bolt text-lg"></i>
+            <a href="#" class="text-2xl font-black text-white flex items-center gap-2">
+                <span class="p-2 rounded-xl bg-yellow-500/10 border border-yellow-500/30 text-yellow-400">
+                    <i class="fa-solid fa-crown text-lg"></i>
                 </span>
                 Ahmed Nasr
             </a>
 
-            <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-slate-300 font-bold text-sm">
-                <a href="#home" class="hover:text-brand-500 transition-colors">الرئيسية</a>
-                <a href="#about" class="hover:text-brand-500 transition-colors">من نحن</a>
-                <a href="#categories" class="hover:text-brand-500 transition-colors">الأقسام</a>
-                <a href="#services" class="hover:text-brand-500 transition-colors">الخدمات</a>
-                <a href="#portfolio" class="hover:text-brand-500 transition-colors">الأعمال</a>
-                <a href="#stats" class="hover:text-brand-500 transition-colors">النتائج</a>
+            <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-zinc-300 font-bold text-sm">
+                <a href="#home" class="hover:text-yellow-400 transition-colors">الرئيسية</a>
+                <a href="#about" class="hover:text-yellow-400 transition-colors">عن المؤسس</a>
+                <a href="#numbers" class="hover:text-yellow-400 transition-colors">أرقام مميزة</a>
+                <a href="#payment" class="hover:text-yellow-400 transition-colors">طرق الدفع</a>
+                <a href="#categories" class="hover:text-yellow-400 transition-colors">الأقسام</a>
+                <a href="#services" class="hover:text-yellow-400 transition-colors">الخدمات</a>
+                <a href="#portfolio" class="hover:text-yellow-400 transition-colors">الأعمال</a>
+                <a href="#reviews" class="hover:text-yellow-400 transition-colors">الآراء</a>
             </nav>
 
             <div class="flex items-center gap-4">
-                <a href="https://www.facebook.com/share/18scsVr8Kk/" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800/80 border border-slate-700/80 text-slate-300 hover:text-brand-500 flex items-center justify-center transition-all">
-                    <i class="fa-brands fa-facebook-f"></i>
+                <a href="https://wa.me/201112170233" target="_blank" class="w-10 h-10 rounded-xl bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 hover:bg-yellow-400 hover:text-black flex items-center justify-center transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
                 </a>
-                <a href="#order" class="bg-gradient-to-r from-brand-500 to-blue-600 hover:opacity-95 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-500/20 text-sm transition-all flex items-center gap-2">
+                <a href="#order" class="gold-btn px-5 py-2.5 rounded-xl text-sm flex items-center gap-2">
                     <i class="fa-solid fa-paper-plane text-xs"></i> اطلب الآن
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section id="home" class="pt-36 pb-20 lg:pt-44 lg:pb-28 text-center relative overflow-hidden">
         <div class="max-w-5xl mx-auto px-4 relative z-10">
-            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/90 border border-slate-700/80 text-brand-500 text-xs font-bold mb-8">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                أحمد نصر — الحلول الرقمية وتوثيق الحسابات
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-xs font-bold mb-8">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                أحمد جمال نصر — حلول وتصاميم رقمية وأرقام VIP
             </span>
             <h1 class="text-4xl sm:text-6xl font-black text-white leading-tight mb-6">
-                نطوّر حضورك الرقمي <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">بنتائج موثوقة وأرقام حقيقية</span>
+                نصنع تجربة رقمية استثنائية <br>
+                <span class="gold-text-pure">تجمع بين الجودة، الفخامة والاحترافية</span>
             </h1>
-            <p class="text-slate-400 text-base sm:text-xl max-w-3xl mx-auto mb-10 font-medium">
-                خدمات متكاملة لزيادة المتابعين، إدارة الحملات الإعلانية، وتوثيق الصفحات بالعلامة الزرقاء بأعلى معايير الأمان.
+            <p class="text-zinc-400 text-base sm:text-xl max-w-3xl mx-auto mb-10 font-medium">
+                بناء هوية خاصة لمشروعك، تصاميم إبداعية، بيع أرقام هواتف VIP مميزة، وحلول تسويقية متكاملة.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/201112170233" target="_blank" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold px-8 py-4 rounded-2xl shadow-xl flex items-center gap-3">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i> تواصل عبر الواتساب
+                <a href="#numbers" class="gold-btn px-8 py-4 rounded-2xl shadow-xl flex items-center gap-3">
+                    <i class="fa-solid fa-sim-card text-xl"></i> تصفح الأرقام المميزة
                 </a>
-                <a href="#about" class="bg-dark-card text-slate-200 font-bold px-8 py-4 rounded-2xl border border-slate-700">اعرف المزيد عنا</a>
+                <a href="https://wa.me/201112170233" target="_blank" class="gold-card text-zinc-200 font-bold px-8 py-4 rounded-2xl border border-yellow-500/30 hover:border-yellow-400 transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i> تواصل عبر الواتساب
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- قسم من نحن (About Us) -->
-    <section id="about" class="py-24 bg-dark-bg border-t border-slate-800/60">
+    <!-- قسم عن المؤسس -->
+    <section id="about" class="py-24 border-t border-yellow-500/10 relative">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
-                    <span class="text-brand-500 text-xs font-black uppercase tracking-widest">من نحن</span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-white">خبرة متخصصة في صناعة التأثير الرقمي</h2>
-                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                        نحن فريق متخصص يقوده **أحمد نصر** لتقديم حلول تسويقية وترويجية شاملة للأفراد والأعمال. نساعدك على تحقيق أقصى استفادة من منصات التواصل الاجتماعي عبر الاستراتيجيات الحديثة والنتائج الملموسة.
+                    <span class="gold-text-pure text-xs font-black uppercase tracking-widest block">عن المنصة والمؤسس</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white">رؤية عصرية وتجربة رقمية فريدة</h2>
+                    <p class="text-zinc-300 text-base leading-relaxed">
+                        <strong class="text-yellow-400 font-bold">أحمد جمال نصر (Ahmed Nasr)</strong> هو صاحب الموقع ومؤسس مؤسسة متخصصة في تقديم الحلول والخدمات الرقمية وتوفير الأرقام المميزة VIP.
                     </p>
-                    <div class="grid grid-cols-2 gap-4 pt-4">
-                        <div class="bg-dark-card p-4 rounded-2xl border border-dark-border">
-                            <i class="fa-solid fa-shield-halved text-brand-500 text-2xl mb-2"></i>
-                            <h4 class="font-bold text-white text-sm">أمان كامل</h4>
-                            <p class="text-slate-400 text-xs mt-1">حماية تامة لحساباتك دون الحاجة ببيانات حساسة.</p>
-                        </div>
-                        <div class="bg-dark-card p-4 rounded-2xl border border-dark-border">
-                            <i class="fa-solid fa-clock-rotate-left text-brand-500 text-2xl mb-2"></i>
-                            <h4 class="font-bold text-white text-sm">سرعة التنفيذ</h4>
-                            <p class="text-slate-400 text-xs mt-1">بدء العمل والتسليم في أوقات قياسية.</p>
-                        </div>
+                    <div class="p-4 rounded-2xl bg-zinc-900 border border-yellow-500/20">
+                        <p class="text-zinc-300 text-xs sm:text-sm font-medium leading-relaxed">
+                            <i class="fa-solid fa-quote-right text-yellow-400 ml-2"></i>
+                            نُقدم خدماتنا بعناية لعملائنا في مصر والدول العربية لضمان أعلى المستويات من الموثوقية والفخامة.
+                        </p>
                     </div>
                 </div>
-                <div class="bg-dark-card p-8 rounded-3xl border border-dark-border relative overflow-hidden text-center">
-                    <div class="w-24 h-24 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-500 flex items-center justify-center text-4xl mx-auto mb-6">
-                        <i class="fa-solid fa-user-check"></i>
+
+                <div class="gold-card p-8 rounded-3xl relative overflow-hidden text-center shadow-2xl">
+                    <div class="relative w-36 h-36 mx-auto mb-6">
+                        <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-yellow-500 via-amber-300 to-yellow-600 blur opacity-75 animate-pulse"></div>
+                        <img src="https://e.top4top.io/p_3872yz3191.jpg" alt="أحمد جمال نصر" class="relative w-full h-full object-cover rounded-full border-2 border-zinc-900 shadow-xl">
                     </div>
-                    <h3 class="text-2xl font-black text-white mb-2">Ahmed Nasr</h3>
-                    <p class="text-brand-500 text-sm font-bold mb-4">خبير التسويق الرقمي وتوثيق الحسابات</p>
-                    <p class="text-slate-400 text-xs leading-relaxed max-w-md mx-auto">
-                        هدفنا الرئيسي هو بناء مصداقية حسابك وتوسيع نطاق وصولك للجمهور المستهدف باستخدام أفضل الطرق الآمنة والفعالة.
-                    </p>
+                    <h3 class="text-2xl font-black text-white mb-2">أحمد جمال نصر</h3>
+                    <p class="gold-text-pure text-sm font-bold mb-4">مؤسس وخبير المشروعات والتصاميم الرقمية</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم الأقسام / التخصصات (Categories) -->
-    <section id="categories" class="py-24 bg-[#0a0e1a] border-t border-slate-800/60">
+    <!-- قسم الأرقام المميزة VIP -->
+    <section id="numbers" class="py-24 border-t border-yellow-500/10 relative">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <span class="text-brand-500 text-xs font-black uppercase tracking-widest block mb-2">الأقسام الرئيسية</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-white">تخصصات خدماتنا الرقمية</h2>
+                <span class="gold-text-pure text-xs font-black uppercase tracking-widest block mb-2">سوق VIP</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">أرقام مميزة للبيع والتنازل</h2>
+                <p class="text-zinc-400 text-sm mt-2">اختر رقمك VIP المفضل واطلبه مباشرة عبر الواتساب</p>
             </div>
 
+            <div id="vipNumbersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="col-span-full text-center py-12 text-zinc-500">جاري تحميل الأرقام المميزة...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم وسائل وطرق الدفع (جديد) -->
+    <section id="payment" class="py-24 border-t border-yellow-500/10 relative">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="gold-text-pure text-xs font-black uppercase tracking-widest block mb-2">مرونة وأمان</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">وسائل وطرق الدفع المتاحة</h2>
+                <p class="text-zinc-400 text-sm mt-2">نوفر لك خيارات تحويل آمنة ومباشرة داخل مصر وخارجها</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- فودافون كاش والمحافظ الإلكترونية -->
+                <div class="gold-card p-6 rounded-3xl space-y-4 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-2xl mb-4 border border-rose-500/20">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">فودافون كاش والمحافظ</h3>
+                        <p class="text-zinc-400 text-xs mb-4">للتحويل المباشر السريع من أي محفظة إلكترونية في مصر.</p>
+                        
+                        <div class="bg-zinc-950/80 p-3.5 rounded-2xl border border-yellow-500/20 flex items-center justify-between">
+                            <span class="text-xs text-zinc-400">رقم المحفظة:</span>
+                            <span id="cashNumber" class="font-mono font-bold text-yellow-400 text-sm dir-ltr">01008656449</span>
+                        </div>
+                    </div>
+
+                    <button onclick="copyText('01112170233', 'رقم المحفظة')" class="w-full bg-zinc-900 hover:bg-yellow-400 hover:text-black border border-yellow-500/30 text-yellow-400 text-xs font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-copy"></i> نسخ رقم المحفظة
+                    </button>
+                </div>
+
+                <!-- InstaPay إنستا باي -->
+                <div class="gold-card p-6 rounded-3xl space-y-4 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl mb-4 border border-purple-500/20">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">تطبيق إنستا باي (InstaPay)</h3>
+                        <p class="text-zinc-400 text-xs mb-4">تحويل بنكي لحظي ومباشر في أي وقت دون رسوم.</p>
+                        
+                        <div class="bg-zinc-950/80 p-3.5 rounded-2xl border border-yellow-500/20 flex items-center justify-between">
+                            <span class="text-xs text-zinc-400">رقم الهاتف / IPA:</span>
+                            <span id="instapayId" class="font-mono font-bold text-yellow-400 text-sm dir-ltr">01112170233</span>
+                        </div>
+                    </div>
+
+                    <button onclick="copyText('01112170233', 'حساب InstaPay')" class="w-full bg-zinc-900 hover:bg-yellow-400 hover:text-black border border-yellow-500/30 text-yellow-400 text-xs font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-copy"></i> نسخ حساب InstaPay
+                    </button>
+                </div>
+
+                <!-- تحويلات دولية (الخليج والوطن العربي) -->
+                <div class="gold-card p-6 rounded-3xl space-y-4 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-4 border border-emerald-500/20">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">التحويلات الدولية</h3>
+                        <p class="text-zinc-400 text-xs mb-4">لعملائنا في الإمارات، قطر، العراق، عُمان، وجميع الدول.</p>
+                        
+                        <div class="bg-zinc-950/80 p-3.5 rounded-2xl border border-yellow-500/20 text-xs text-zinc-300 space-y-1">
+                            <div>• Western Union / RIA</div>
+                            <div>• تحويل بنكي مباشر (IBAN)</div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/201112170233?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84%20%D8%B9%D9%84%D9%89%20%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%20%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A" target="_blank" class="w-full bg-zinc-900 hover:bg-yellow-400 hover:text-black border border-yellow-500/30 text-yellow-400 text-xs font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> طلب بيانات التحويل الدولي
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- ملاحظة أمان -->
+            <div class="mt-8 p-4 rounded-2xl bg-zinc-900/80 border border-yellow-500/20 text-center text-xs text-zinc-400 max-w-2xl mx-auto">
+                <i class="fa-solid fa-shield-halved text-yellow-400 ml-1"></i>
+                بعد إتمام عملية التحويل، يُرجى إرسال صورة إيصال التحويل عبر الواتساب لتأكيد طلبك وفور البدء في التنفيذ.
+            </div>
+        </div>
+    </section>
+
+    <!-- الأقسام والتخصصات -->
+    <section id="categories" class="py-24 border-t border-yellow-500/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="gold-text-pure text-xs font-black uppercase tracking-widest block mb-2">الأقسام والتخصصات</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">تخصصات خدماتنا الرقمية</h2>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Category 1 -->
-                <div class="bg-dark-card p-6 rounded-2xl border border-dark-border text-center card-glow transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mx-auto mb-4">
-                        <i class="fa-brands fa-facebook-f"></i>
+                <div class="gold-card p-6 rounded-2xl text-center">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-xl mx-auto mb-4 border border-yellow-500/30">
+                        <i class="fa-solid fa-sim-card"></i>
                     </div>
-                    <h3 class="font-bold text-white text-base mb-2">خدمات فيسبوك</h3>
-                    <p class="text-slate-400 text-xs">تزويد بيجات، متابعين، توثيق الشارة الزرقاء، وحملات ممولة.</p>
+                    <h3 class="font-bold text-white text-base mb-2">أرقام VIP مميزة</h3>
+                    <p class="text-zinc-400 text-xs">أرقام كروت وهواتف فريدة وسهلة الحفظ لكل الشبكات.</p>
                 </div>
-
-                <!-- Category 2 -->
-                <div class="bg-dark-card p-6 rounded-2xl border border-dark-border text-center card-glow transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-xl mx-auto mb-4">
-                        <i class="fa-brands fa-instagram"></i>
+                <div class="gold-card p-6 rounded-2xl text-center">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-xl mx-auto mb-4 border border-yellow-500/30">
+                        <i class="fa-solid fa-pen-nib"></i>
                     </div>
-                    <h3 class="font-bold text-white text-base mb-2">خدمات إنستغرام</h3>
-                    <p class="text-slate-400 text-xs">متابعين حقيقيين، لايكات، مشاهدات ريلز، وتوثيق الحسابات.</p>
+                    <h3 class="font-bold text-white text-base mb-2">التصميم والهوية</h3>
+                    <p class="text-zinc-400 text-xs">تصميم هويات بصرية ومشروعات تحمل رؤية مميزة وخاصة.</p>
                 </div>
-
-                <!-- Category 3 -->
-                <div class="bg-dark-card p-6 rounded-2xl border border-dark-border text-center card-glow transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mx-auto mb-4">
-                        <i class="fa-brands fa-tiktok"></i>
+                <div class="gold-card p-6 rounded-2xl text-center">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-xl mx-auto mb-4 border border-yellow-500/30">
+                        <i class="fa-solid fa-laptop-code"></i>
                     </div>
-                    <h3 class="font-bold text-white text-base mb-2">خدمات تيك توك</h3>
-                    <p class="text-slate-400 text-xs">زيادة متابعين، دعم البث المباشر، ورفع اكسبلور القياسي.</p>
+                    <h3 class="font-bold text-white text-base mb-2">الحلول الرقمية</h3>
+                    <p class="text-zinc-400 text-xs">أفكار مبتكرة وحلول عصرية تواكب أحدث التطورات التقنية.</p>
                 </div>
-
-                <!-- Category 4 -->
-                <div class="bg-dark-card p-6 rounded-2xl border border-dark-border text-center card-glow transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mx-auto mb-4">
+                <div class="gold-card p-6 rounded-2xl text-center">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-xl mx-auto mb-4 border border-yellow-500/30">
                         <i class="fa-solid fa-bullhorn"></i>
                     </div>
                     <h3 class="font-bold text-white text-base mb-2">إعلانات ممولة</h3>
-                    <p class="text-slate-400 text-xs">إدارة واستهداف دقيق لزيادة المبيعات والوصول للعملاء.</p>
+                    <p class="text-zinc-400 text-xs">حملات موجهة لاستهداف الجمهور في دول الخليج والوطن العربي.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services -->
-    <section id="services" class="py-24 bg-dark-bg border-t border-slate-800/60">
+    <section id="services" class="py-24 border-t border-yellow-500/10">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <span class="text-brand-500 text-xs font-black uppercase tracking-widest block mb-2">الخدمات</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-white">حلول احترافية لنمو حضورك</h2>
+                <span class="gold-text-pure text-xs font-black uppercase tracking-widest block mb-2">الخدمات</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">حلول احترافية لتطوير أعمالك</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-dark-card p-8 rounded-3xl border border-dark-border card-glow">
-                    <i class="fa-solid fa-user-plus text-brand-500 text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">تزويد المتابعين والتفاعل</h3>
-                    <p class="text-slate-400 text-sm">نمو سريع لمختلف الحسابات لرفع الهيبة والمصداقية.</p>
+                <div class="gold-card p-8 rounded-3xl">
+                    <i class="fa-solid fa-wand-magic-sparkles text-yellow-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">تصميم ومشروعات إبداعية</h3>
+                    <p class="text-zinc-400 text-sm">تصاميم بصرية فريدة تعكس قيمة مشروعك وهويتك.</p>
                 </div>
-                <div class="bg-dark-card p-8 rounded-3xl border border-dark-border card-glow">
-                    <i class="fa-solid fa-rectangle-ad text-blue-400 text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">التسويق والحملات الإعلانية</h3>
-                    <p class="text-slate-400 text-sm">استهداف دقيق للوصول للجمهور المهتم بالخدمات.</p>
+                <div class="gold-card p-8 rounded-3xl">
+                    <i class="fa-solid fa-chart-line text-yellow-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">التسويق والحملات الممولة</h3>
+                    <p class="text-zinc-400 text-sm">استهداف دقيق في الإمارات، قطر، العراق، وعُمان.</p>
                 </div>
-                <div class="bg-dark-card p-8 rounded-3xl border border-dark-border card-glow">
-                    <i class="fa-solid fa-circle-check text-emerald-400 text-3xl mb-4"></i>
+                <div class="gold-card p-8 rounded-3xl">
+                    <i class="fa-solid fa-circle-check text-yellow-400 text-3xl mb-4"></i>
                     <h3 class="text-xl font-bold text-white mb-2">توثيق الحسابات والصفحات</h3>
-                    <p class="text-slate-400 text-sm">مساعدة وتجهيز ملفات الحسابات للتوثيق بالنجمة الزرقاء.</p>
+                    <p class="text-zinc-400 text-sm">تجهيز الحسابات وتوثيقها بأعلى مستويات الأمان والمصداقية.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="py-24 bg-[#0a0e1a] border-t border-slate-800/60">
+    <section id="portfolio" class="py-24 border-t border-yellow-500/10">
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-16">
-                <span class="text-brand-500 text-xs font-black uppercase tracking-widest block mb-2">معرض الأعمال</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-white">نماذج من نتائج عملائنا</h2>
+                <span class="gold-text-pure text-xs font-black uppercase tracking-widest block mb-2">معرض الأعمال</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">نماذج من أعمالنا ونتائج شركائنا</h2>
             </div>
             <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="col-span-full text-center py-12 text-slate-500">جاري التحميل...</div>
+                <div class="col-span-full text-center py-12 text-zinc-500">جاري التحميل...</div>
             </div>
         </div>
     </section>
 
-    <!-- Stats -->
-    <section id="stats" class="py-20 bg-dark-bg border-t border-slate-800/60">
+    <!-- قسم آراء العملاء -->
+    <section id="reviews" class="py-24 border-t border-yellow-500/10 relative">
         <div class="max-w-7xl mx-auto px-4">
-            <div id="statsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="col-span-full py-6 text-slate-500">جاري تحميل النتائج...</div>
+            <div class="text-center mb-16">
+                <span class="gold-text-pure text-xs font-black uppercase tracking-widest block mb-2">آراء وانطباعات</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">ماذا يقول شركاؤنا وعملاؤنا؟</h2>
+            </div>
+
+            <div id="reviewsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="col-span-full text-center py-12 text-zinc-500">جاري تحميل الآراء...</div>
+            </div>
+
+            <div class="max-w-2xl mx-auto gold-card p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-white mb-4 text-center">أضف رأيك وتجربتك معنا</h3>
+                <form id="addReviewForm" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-300 mb-1">اسمك الكريـم</label>
+                            <input type="text" id="revName" required placeholder="أدخل اسمك" class="w-full bg-zinc-950 border border-yellow-500/20 rounded-xl p-3 text-white text-sm focus:border-yellow-400 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-300 mb-1">البلد / المدينة</label>
+                            <input type="text" id="revCountry" placeholder="مثال: مصر / الإمارات" class="w-full bg-zinc-950 border border-yellow-500/20 rounded-xl p-3 text-white text-sm focus:border-yellow-400 outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-300 mb-1">التقييم بالنجوم</label>
+                        <select id="revStars" class="w-full bg-zinc-950 border border-yellow-500/20 rounded-xl p-3 text-yellow-400 text-sm focus:border-yellow-400 outline-none">
+                            <option value="5">⭐⭐⭐⭐⭐ (5/5 ممتاز جداً)</option>
+                            <option value="4">⭐⭐⭐⭐ (4/5 ممتاز)</option>
+                            <option value="3">⭐⭐⭐ (3/5 جيد جداً)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-300 mb-1">رأيك وتجربتك في الخدمة</label>
+                        <textarea id="revComment" rows="3" required placeholder="اكتب انطباعك..." class="w-full bg-zinc-950 border border-yellow-500/20 rounded-xl p-3 text-white text-sm focus:border-yellow-400 outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full gold-btn py-3.5 rounded-xl shadow-lg">نشر تقييمك</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Order -->
-    <section id="order" class="py-24 bg-[#0a0e1a] border-t border-slate-800/60">
+    <!-- Order Section -->
+    <section id="order" class="py-24 border-t border-yellow-500/10">
         <div class="max-w-3xl mx-auto px-4">
-            <div class="bg-dark-card p-8 sm:p-12 rounded-3xl border border-dark-border shadow-2xl">
+            <div class="gold-card p-8 sm:p-12 rounded-3xl shadow-2xl">
                 <div class="text-center mb-10">
-                    <h3 class="text-3xl font-black text-white mb-2">اطلب خدمتك الآن</h3>
-                    <p class="text-slate-400 text-sm">سيتم إرسال الطلب وحفظه لمتابعته مباشرة</p>
+                    <h3 class="text-3xl font-black text-white mb-2">اطلب خدمتك الآن عبر الواتساب</h3>
+                    <p class="text-zinc-400 text-sm">سيتم توجيهك مباشرة للواتساب للاتفاق والبدء فوراً</p>
                 </div>
 
                 <form id="firebaseOrderForm" class="space-y-6">
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 mb-2">الاسم بالكامل</label>
-                        <input type="text" id="clientName" required placeholder="أدخل اسمك" class="w-full bg-dark-bg border border-slate-700/80 rounded-2xl p-4 text-white text-sm">
+                        <label class="block text-xs font-bold text-zinc-200 mb-2">الاسم بالكامل</label>
+                        <input type="text" id="clientName" required placeholder="أدخل اسمك" class="w-full bg-zinc-950 border border-yellow-500/20 rounded-2xl p-4 text-white text-sm focus:border-yellow-400 outline-none transition-all">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 mb-2">رقم الهاتف / الواتساب</label>
-                        <input type="tel" id="clientPhone" required placeholder="01112170233" class="w-full bg-dark-bg border border-slate-700/80 rounded-2xl p-4 text-white text-sm text-right dir-ltr">
+                        <label class="block text-xs font-bold text-zinc-200 mb-2">رقم الهاتف / الواتساب</label>
+                        <input type="tel" id="clientPhone" required placeholder="01xxxxxxxxx" class="w-full bg-zinc-950 border border-yellow-500/20 rounded-2xl p-4 text-white text-sm text-right dir-ltr focus:border-yellow-400 outline-none transition-all">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 mb-2">القسم / الخدمة</label>
-                        <select id="serviceType" class="w-full bg-dark-bg border border-slate-700/80 rounded-2xl p-4 text-white text-sm">
-                            <option value="تزويد متابعين">قسم تزويد المتابعين والتفاعل</option>
+                        <label class="block text-xs font-bold text-zinc-200 mb-2">القسم / الخدمة المطلوب</label>
+                        <select id="serviceType" class="w-full bg-zinc-950 border border-yellow-500/20 rounded-2xl p-4 text-white text-sm focus:border-yellow-400 outline-none transition-all">
+                            <option value="شراء رقم مميز VIP">قسم الأرقام المميزة (VIP)</option>
+                            <option value="تصميم وهوية بصرية">قسم التصميم والهوية البصرية</option>
+                            <option value="حلول رقمية ومشاريع">قسم الحلول والمشاريع الرقمية</option>
                             <option value="حملة تسويق إلكتروني">قسم الحملات الإعلانية الممولة</option>
-                            <option value="توثيق حساب">قسم توثيق الصفحات والحسابات</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 mb-2">رابط الصفحة / التفاصيل</label>
-                        <textarea id="orderDetails" rows="3" required placeholder="رابط الحساب والملاحظات..." class="w-full bg-dark-bg border border-slate-700/80 rounded-2xl p-4 text-white text-sm"></textarea>
+                        <label class="block text-xs font-bold text-zinc-200 mb-2">التفاصيل / الرقم المطلوب</label>
+                        <textarea id="orderDetails" rows="3" required placeholder="أدخل تفاصيل طلبك..." class="w-full bg-zinc-950 border border-yellow-500/20 rounded-2xl p-4 text-white text-sm focus:border-yellow-400 outline-none transition-all"></textarea>
                     </div>
-                    <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-brand-500 to-blue-600 text-white font-bold py-4 rounded-2xl">
-                        <i class="fa-solid fa-paper-plane"></i> إرسال الطلب
+                    <button type="submit" id="submitBtn" class="w-full gold-btn py-4 rounded-2xl shadow-lg flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> إرسال الطلب عبر الواتساب (01112170233)
                     </button>
                 </form>
             </div>
@@ -267,11 +422,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 bg-dark-bg border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>Ahmed Nasr (احمد نصر) — جميع الحقوق محفوظة © 2026</p>
+    <footer class="py-10 border-t border-yellow-500/10 text-center text-zinc-500 text-sm space-y-2">
+        <p>Ahmed Jamal Nasr (أحمد جمال نصر) — جميع الحقوق محفوظة © 2026</p>
+        <p class="text-xs">تواصل واتساب: <a href="https://wa.me/201112170233" class="text-yellow-400 hover:underline dir-ltr inline-block">01112170233</a></p>
     </footer>
 
-    <!-- Firebase Logic -->
+    <!-- Scripts -->
     <script>
         const firebaseConfig = {
             apiKey: "AIzaSyDuMiIEwoQSVzP8YSzcTmSC8fAvb1ikGko",
@@ -288,69 +444,146 @@
         function showToast(message, isError = false) {
             const toast = document.getElementById("toast");
             document.getElementById("toastMsg").innerText = message;
-            document.getElementById("toastIcon").className = isError ? "fa-solid fa-circle-xmark text-rose-500 text-xl" : "fa-solid fa-circle-check text-emerald-400 text-xl";
+            document.getElementById("toastIcon").className = isError ? "fa-solid fa-circle-xmark text-rose-500 text-xl" : "fa-solid fa-circle-check text-yellow-400 text-xl";
             toast.classList.remove("translate-y-20", "opacity-0", "pointer-events-none");
             setTimeout(() => toast.classList.add("translate-y-20", "opacity-0", "pointer-events-none"), 3500);
         }
 
-        database.ref("ahmed_nasr_portfolio").on("value", (snapshot) => {
-            const grid = document.getElementById("portfolioGrid");
+        // دالة نسخ النصوص للحافظة
+        function copyText(text, label) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(`تم نسخ ${label} بنجاح!`);
+            }).catch(() => {
+                showToast(`فشل النسخ تلقائياً`, true);
+            });
+        }
+
+        // جلب وعرض الأرقام المميزة VIP
+        database.ref("ahmed_nasr_vip_numbers").on("value", (snapshot) => {
+            const grid = document.getElementById("vipNumbersGrid");
             grid.innerHTML = "";
             const data = snapshot.val();
-            if (!data) return grid.innerHTML = `<div class="col-span-full text-center py-8 text-slate-500">لا توجد أعمال مضافة حالياً.</div>`;
-            Object.keys(data).forEach((key) => {
+            if (!data) return grid.innerHTML = `<div class="col-span-full text-center py-8 text-zinc-500">لا توجد أرقام مميزة معروضة حالياً.</div>`;
+            
+            Object.keys(data).reverse().forEach((key) => {
                 const item = data[key];
+                const isAvailable = item.status !== 'sold';
+                const waText = `مرحباً، أرغب في حجز/شراء الرقم المميز VIP التالية تفاصيله:\n\nالرقم: ${item.phoneNumber}\nالشبكة: ${item.network}\nالسعر: ${item.price}`;
+                
                 grid.innerHTML += `
-                    <div class="bg-dark-card rounded-3xl border border-dark-border card-glow overflow-hidden">
-                        ${item.imgUrl ? `<img src="${item.imgUrl}" loading="lazy" class="w-full h-48 object-cover">` : ''}
-                        <div class="p-6">
-                            <span class="text-xs font-bold text-brand-500 block mb-1">${item.category}</span>
-                            <h3 class="font-bold text-white text-lg mb-2">${item.title}</h3>
-                            <p class="text-slate-400 text-sm">${item.description}</p>
+                    <div class="gold-card p-6 rounded-3xl relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-bold ${isAvailable ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/10 text-rose-400 border border-rose-500/30'}">
+                                    ${isAvailable ? 'متاح للشراء' : 'تم البيع'}
+                                </span>
+                                <span class="text-xs font-bold text-yellow-400 flex items-center gap-1">
+                                    <i class="fa-solid fa-signal text-[10px]"></i> ${item.network || 'شبكة عامة'}
+                                </span>
+                            </div>
+
+                            <div class="text-center py-4 bg-zinc-950/80 rounded-2xl border border-yellow-500/20 mb-4">
+                                <span class="text-2xl sm:text-3xl font-black text-white dir-ltr inline-block tracking-widest font-mono text-yellow-400">${item.phoneNumber}</span>
+                            </div>
+
+                            ${item.description ? `<p class="text-zinc-400 text-xs text-center mb-4">${item.description}</p>` : ''}
+                        </div>
+
+                        <div class="pt-4 border-t border-zinc-800 flex items-center justify-between gap-3">
+                            <div>
+                                <span class="text-[10px] text-zinc-500 block">السعر المطلوب</span>
+                                <span class="text-lg font-black text-white">${item.price}</span>
+                            </div>
+                            ${isAvailable ? `
+                                <a href="https://wa.me/201112170233?text=${encodeURIComponent(waText)}" target="_blank" class="gold-btn px-4 py-2.5 rounded-xl text-xs flex items-center gap-1.5 shadow-md">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i> شراء الرقم
+                                </a>
+                            ` : `
+                                <button disabled class="bg-zinc-800 text-zinc-500 px-4 py-2.5 rounded-xl text-xs font-bold cursor-not-allowed">غير متاح</button>
+                            `}
                         </div>
                     </div>`;
             });
         });
 
-        database.ref("ahmed_nasr_stats").on("value", (snapshot) => {
-            const grid = document.getElementById("statsGrid");
+        // جلب الأعمال
+        database.ref("ahmed_nasr_portfolio").on("value", (snapshot) => {
+            const grid = document.getElementById("portfolioGrid");
             grid.innerHTML = "";
             const data = snapshot.val();
-            if (!data) return grid.innerHTML = `<div class="col-span-full text-center py-6 text-slate-500">لا توجد نتائج مضافة.</div>`;
+            if (!data) return grid.innerHTML = `<div class="col-span-full text-center py-8 text-zinc-500">لا توجد أعمال مضافة حالياً.</div>`;
             Object.keys(data).forEach((key) => {
                 const item = data[key];
                 grid.innerHTML += `
-                    <div class="bg-dark-card p-8 rounded-3xl border border-dark-border">
-                        <div class="text-4xl font-black text-brand-500 mb-2">${item.value}</div>
-                        <div class="text-slate-300 font-bold text-sm">${item.label}</div>
+                    <div class="gold-card rounded-3xl overflow-hidden">
+                        ${item.imgUrl ? `<img src="${item.imgUrl}" loading="lazy" class="w-full h-48 object-cover">` : ''}
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-yellow-400 block mb-1">${item.category}</span>
+                            <h3 class="font-bold text-white text-lg mb-2">${item.title}</h3>
+                            <p class="text-zinc-400 text-sm">${item.description}</p>
+                        </div>
                     </div>`;
             });
         });
 
+        // جلب الآراء
+        database.ref("ahmed_nasr_reviews").on("value", (snapshot) => {
+            const grid = document.getElementById("reviewsGrid");
+            grid.innerHTML = "";
+            const data = snapshot.val();
+            let count = 0;
+
+            if (data) {
+                Object.keys(data).reverse().forEach((key) => {
+                    const rev = data[key];
+                    if (rev.status === "approved") {
+                        count++;
+                        const starsHtml = '⭐'.repeat(parseInt(rev.stars || 5));
+                        grid.innerHTML += `
+                            <div class="gold-card p-6 rounded-2xl">
+                                <div class="text-yellow-400 text-sm mb-2">${starsHtml}</div>
+                                <p class="text-zinc-300 text-xs mb-4">"${rev.comment}"</p>
+                                <div class="font-bold text-white text-xs">${rev.name} ${rev.country ? `<span class="text-zinc-500 font-normal">(${rev.country})</span>` : ''}</div>
+                            </div>`;
+                    }
+                });
+            }
+            if (count === 0) grid.innerHTML = `<div class="col-span-full text-center py-8 text-zinc-500">لا توجد آراء منشورة حالياً.</div>`;
+        });
+
+        // إضافة رأي
+        document.getElementById("addReviewForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const newRef = database.ref("ahmed_nasr_reviews").push();
+            newRef.set({
+                id: newRef.key,
+                name: document.getElementById("revName").value,
+                country: document.getElementById("revCountry").value,
+                stars: document.getElementById("revStars").value,
+                comment: document.getElementById("revComment").value,
+                status: "pending",
+                timestamp: new Date().toISOString()
+            }).then(() => {
+                showToast("تم إرسال تقييمك! سيظهر بعد المراجعة");
+                document.getElementById("addReviewForm").reset();
+            });
+        });
+
+        // إرسال طلب
         const form = document.getElementById("firebaseOrderForm");
         form.addEventListener("submit", (e) => {
             e.preventDefault();
-            const btn = document.getElementById("submitBtn");
-            btn.disabled = true;
-
             const name = document.getElementById("clientName").value;
             const phone = document.getElementById("clientPhone").value;
             const service = document.getElementById("serviceType").value;
             const details = document.getElementById("orderDetails").value;
 
             const newRef = database.ref("ahmed_nasr_orders").push();
-            newRef.set({
-                id: newRef.key,
-                name: name,
-                phone: phone,
-                service: service,
-                details: details,
-                timestamp: new Date().toISOString()
-            }).then(() => {
-                showToast("تم إرسال وحفظ الطلب بنجاح!");
+            newRef.set({ id: newRef.key, name, phone, service, details, timestamp: new Date().toISOString() }).then(() => {
+                showToast("تم تسجيل الطلب! جاري التحويل للواتساب...");
                 form.reset();
-                btn.disabled = false;
-                window.open(`https://wa.me/201112170233?text=${encodeURIComponent(`طلب جديد:\nالاسم: ${name}\nالهاتف: ${phone}\nالخدمة: ${service}\nالتفاصيل: ${details}`)}`, '_blank');
+                const waMessage = `طلب جديد عبر الموقع:\n\n👤 الاسم: ${name}\n📱 الهاتف: ${phone}\n📌 الخدمة: ${service}\n📝 التفاصيل: ${details}`;
+                window.open(`https://wa.me/201112170233?text=${encodeURIComponent(waMessage)}`, '_blank');
             });
         });
     </script>
