@@ -1,0 +1,13 @@
+إصلاح لوحة الأدمن على الموبايل
+==============================
+تم تضمين Firebase Web Config داخل admin.html نفسه، لذلك لا تعتمد صفحة الأدمن على تحميل firebase-config.js النسبي عند فتحها من الموبايل.
+
+الأفضل دائمًا فتح لوحة الإدارة من رابط HTTPS المنشور على Vercel، مثال:
+https://ahmednasr.vercel.app/admin.html
+
+إذا فتحت admin.html مباشرة من WhatsApp وظهر العنوان content:// فقد يمنع المتصفح الداخلي بعض ملفات JavaScript الخارجية. في هذه الحالة افتح الملف/الرابط في Chrome أو ارفع النسخة على Vercel.
+
+تأكد في Firebase Console:
+Authentication > Sign-in method > Email/Password = Enabled
+Authentication > Users = يوجد حساب الأدمن
+Authentication > Settings > Authorized domains = ahmednasr.vercel.app (عند النشر)

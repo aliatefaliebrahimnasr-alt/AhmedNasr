@@ -1,0 +1,20 @@
+إعداد Firebase للموقع ولوحة الإدارة
+=================================
+
+المشروع المستخدم:
+ahmednasr-2a285
+
+تم ربط index.html و admin.html بنفس firebase-config.js.
+
+لتشغيل تسجيل دخول لوحة الإدارة:
+1) افتح Firebase Console للمشروع ahmednasr-2a285.
+2) Authentication > Sign-in method.
+3) فعّل Email/Password.
+4) Authentication > Users > Add user.
+5) أنشئ بريد وكلمة مرور للأدمن.
+6) إذا ظهر خطأ domain غير مصرح به عند التشغيل على Vercel، أضف ahmednasr.vercel.app إلى Authorized domains في Authentication.
+7) افتح admin.html وسجّل الدخول بالحساب الذي أنشأته.
+
+ملاحظة أمان مهمة:
+ملف firebase.rules.json في هذه النسخة ما زال يسمح بالقراءة والكتابة العامة حتى لا تتوقف طريقة حفظ الطلبات الحالية في الموقع.
+تسجيل الدخول يحمي واجهة admin.html، لكنه لا يغلق قاعدة البيانات نفسها حتى يتم تعديل Rules ومنطق حفظ الطلبات.
