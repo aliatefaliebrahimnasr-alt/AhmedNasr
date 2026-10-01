@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "ahmed_nasr_v4": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}
